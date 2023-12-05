@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width:60%;
+        }
+        input, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            width: 10%; 
+            text-align: center;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Validation Form</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" oninput="checkNameValidity()"><span id="nameError"></span>
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" oninput="validateMobileNumber()"><span id="mobileError"></span>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" oninput="validateEmail()"><span id="emailError"></span>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" oninput="validatePassword()"><span id="passwordError"></span>
+        <label for="retype-password">Retype Password:</label>
+        <input type="password" id="retype-password" name="retype-password" oninput="checkPasswords()"><span id="retypePasswordError"></span>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" oninput="validateAge()"><span id="ageError"></span>
+        <button type="button" id="validate" onclick="checkAllValidations()">Validate</button>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
